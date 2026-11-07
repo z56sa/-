@@ -1,0 +1,46 @@
+{
+  "name": "m3rab",
+  "productName": "معراب",
+  "private": true,
+  "version": "1.0.85",
+  "main": "main.cjs",
+  "description": "معراب - منصة تعريب الألعاب",
+  "author": "معراب",
+  "license": "MIT",
+  "scripts": {
+    "start": "node_modules\\.bin\\electron.cmd .",
+    "build": "electron-builder --win --x64"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.18.0"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.m3rab.app",
+    "productName": "معراب",
+    "win": {
+      "target": [
+        { "target": "dir", "arch": ["x64"] }
+      ],
+      "icon": "app_icon.ico"
+    },
+    "files": [
+      "dist/**",
+      "main.cjs",
+      "preload.cjs",
+      "app_icon.ico",
+      "package.json",
+      "node_modules/@libsql/**"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "extraMetadata": {
+      "name": "m3rab",
+      "productName": "معراب"
+    }
+  }
+}
